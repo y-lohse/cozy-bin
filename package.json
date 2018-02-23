@@ -2,8 +2,7 @@
   "name": "cozy-bin",
   "version": "0.1.0",
   "scripts": {
-    "clean:browser": "rm -rf build/*",
-    "clean:mobile": "rm -rf mobile/www/*",
+    "clean": "rm -rf build/*",
     "tx": "tx pull --all || true",
     "lint": "npm-run-all --parallel 'lint:*'",
     "lint:js": "eslint '{src,test}/**/*.{js,jsx}'",
@@ -11,10 +10,10 @@
     "lint:styles": "stylint src/styles --config ./.stylintrc",
     "build": "yarn run build:browser",
     "commons:build": "cozy-scripts build",
-    "build:browser": "NODE_ENV=browser:production npm-run-all --serial clean:browser lint:js tx commons:build",
+    "build:browser": "NODE_ENV=browser:production npm-run-all --serial clean lint:js tx commons:build",
     "watch": "yarn run watch:browser",
     "commons:watch": "cozy-scripts watch",
-    "watch:browser": "NODE_ENV=browser:development npm-run-all --serial clean:browser commons:watch",
+    "watch:browser": "NODE_ENV=browser:development npm-run-all --serial clean commons:watch",
     "commons:watch:standalone": "cozy-scripts standalone",
     "watch:browser:standalone": "NODE_ENV=browser:development yarn run commons:watch:standalone",
     "config:browser:production": "NODE_ENV=browser:production cozy-scripts --show-config",
@@ -59,14 +58,15 @@
   "dependencies": {
     "cozy-bar": "4.8.8",
     "cozy-client-js": "0.7.1",
-    "cozy-ui": "7.4.2",
+    "cozy-scripts": "0.5.3",
+    "cozy-ui": "7.5.0",
     "preact": "8.2.7",
     "preact-compat": "3.18.0",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-redux": "5.0.7",
     "react-router-dom": "4.2.2",
     "redux": "3.7.2",
     "redux-raven-middleware": "1.2.0",
-    "redux-thunk": "2.2.0",
-    "cozy-scripts": "0.5.3"
+    "redux-thunk": "2.2.0"
   }
 }

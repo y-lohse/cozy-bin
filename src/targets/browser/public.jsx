@@ -19,16 +19,16 @@ if (__DEVELOPMENT__) {
 
 let appLocale
 const renderApp = function () {
-  const App = require('components/App').default
+  const PublicApp = require('components/Public').default
   render(
     <I18n lang={appLocale} dictRequire={appLocale => require(`locales/${appLocale}`)}>
-      <App />
+      <PublicApp />
     </I18n>
     , document.querySelector('[role=application]'))
 }
 
 if (module.hot) {
-  module.hot.accept('components/App', function () {
+  module.hot.accept('components/Public', function () {
     renderApp()
   })
 }
@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
     appEditor: appEditor,
     appName: appName,
     iconPath: appIcon,
-    lang: appLocale
+    lang: appLocale,
+    replaceTitleOnMobile: true
   })
 
   renderApp()

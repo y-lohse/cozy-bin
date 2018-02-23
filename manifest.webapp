@@ -1,6 +1,7 @@
 {
-  "name": "cozy-bin",
-  "slug": "cozy-bin",
+  "name": "bin",
+  "slug": "bin",
+  "editor": "cozy",
   "icon": "icon.svg",
   "description": "Share documents publicly",
   "category": "",
@@ -18,6 +19,11 @@
       "folder": "/",
       "index": "index.html",
       "public": false
+    },
+    "/bin": {
+      "folder": "/",
+      "index": "public.html",
+      "public": true
     }
   },
   "permissions": {
@@ -25,6 +31,11 @@
       "description": "Required by the cozy-bar to display the icons of the apps",
       "type": "io.cozy.apps",
       "verbs": ["GET"]
+    },
+    "bin": {
+      "description": "Manage bins",
+      "type": "io.cozy.bin",
+      "verbs": ["ALL"]
     }
   }
 }
