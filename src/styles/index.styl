@@ -1,5 +1,6 @@
 @require 'cozy-ui/build'
 @require 'objects/layouts'
+@require 'settings/palette.styl'
 
 .c-layout
     @extend $app
@@ -7,6 +8,7 @@
 .app-content
     max-width 50rem
     margin 0 auto
+    padding 0 1rem
 
 .submit-form
     height 100%
@@ -14,8 +16,10 @@
 
 .submit-form .textarea
     max-width 100%
-    min-height 80%
+    height 80%
+    min-height 14rem
     margin 1rem auto
+    font-family monospace
 
 .copy-ui
     margin 1rem auto
@@ -25,3 +29,10 @@
     display inline-block
     max-width 12rem
 
+.content-viewer
+    width 100%
+    max-width 50rem
+    min-height 10rem
+    padding 1rem
+    background paleGrey
+    margin 2rem auto
